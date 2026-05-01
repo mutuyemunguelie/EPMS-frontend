@@ -5,9 +5,9 @@ import { useSocket } from "../context/SocketContext";
 import { useAuth } from "../context/AuthContext";
 import Modal from "../components/Modal";
 import {
-  Shield, Users, List, LayoutGrid, Search, ToggleLeft, ToggleRight,
-  Circle, AlertCircle, CheckCircle2, Trash2, Settings2, Eye,
-  Lock, MessageCircle, X, Check, XCircle, Clock,
+  Shield, List, LayoutGrid, Search, ToggleLeft, ToggleRight,
+  Circle, AlertCircle, CheckCircle2, Trash2, Settings2,
+  Lock, X, Check, Clock,
 } from "lucide-react";
 
 const UsersManagement = () => {
@@ -496,11 +496,6 @@ const UsersManagement = () => {
       </Modal>
     </div>
   );
-};
-
-/* Helper used inside modal */
-const PermToggle = ({ label, pKey }) => {
-  return null; // defined inline in component above
 };
 
 export default UsersManagement;

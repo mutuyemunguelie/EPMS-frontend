@@ -9,7 +9,7 @@ import { formatDistanceToNow } from "date-fns";
 import {
   User, Shield, Users, Wallet, Building2, Phone,
   MapPin, Calendar, Hash, CheckCircle2, Clock,
-  TrendingUp, Briefcase,
+  Briefcase,
 } from "lucide-react";
 
 const Profile = () => {
