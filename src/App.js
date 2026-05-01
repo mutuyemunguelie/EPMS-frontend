@@ -6,6 +6,7 @@ import {
   Navigate,
   useLocation,
 } from "react-router-dom";
+import { Analytics } from "@vercel/analytics/react";
 import { AuthProvider, useAuth } from "./context/AuthContext";
 import { SocketProvider } from "./context/SocketContext";
 import ProtectedRoute from "./components/ProtectedRoute";
@@ -182,6 +183,7 @@ const App = () => (
         </ForceLogoutWrapper>
       </SocketProvider>
     </AuthProvider>
+    <Analytics />
   </BrowserRouter>
 );
 
