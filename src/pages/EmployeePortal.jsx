@@ -7,7 +7,7 @@ import RealtimeClock from "../components/RealtimeClock";
 import { formatDistanceToNow } from "date-fns";
 import {
   User, Wallet, Building2, Calendar, Phone, MapPin,
-  Hash, ArrowRight, TrendingUp,
+  Hash, TrendingUp,
 } from "lucide-react";
 
 const EmployeePortal = () => {

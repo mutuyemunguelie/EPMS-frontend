@@ -10,7 +10,7 @@ import { formatDistanceToNow } from "date-fns";
 import Modal from "../components/Modal";
 import {
   Shield, Clock, CheckCircle2, XCircle, AlertCircle,
-  Trash2, Filter, RefreshCw, MessageSquare, User,
+  Trash2, Filter, RefreshCw, User,
   Check, X, Eye,
 } from "lucide-react";
 
@@ -100,14 +100,6 @@ const PermissionPortal = () => {
     } catch (e) {
       setError(e.response?.data?.message || "Review failed.");
     } finally { setSubmitting(false); }
-  };
-
-  const handleQuickReview = async (req, status) => {
-    try {
-      await reviewPermissionRequest(req._id, { status, reviewNote: `${status} by admin.` });
-      setSuccess(`Request ${status}.`);
-      fetchRequests();
-    } catch { setError("Failed."); }
   };
 
   const handleDelete = async (id) => {

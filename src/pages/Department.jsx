@@ -7,7 +7,7 @@ import Modal from "../components/Modal";
 import {
   Building2, Plus, AlertCircle, CheckCircle2,
   Hash, Type, DollarSign, TrendingDown, Pencil,
-  Trash2, X, Users, Save,
+  Trash2, X, Save,
 } from "lucide-react";
 
 const INITIAL = {

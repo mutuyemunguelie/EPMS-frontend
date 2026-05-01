@@ -3,7 +3,7 @@ import { getActivityLogs } from "../api/activityAPI";
 import { formatDistanceToNow, format } from "date-fns";
 import {
   Activity, Users, Wallet, Building2, Settings,
-  Shield, MessageCircle, RefreshCw, Filter,
+  Shield, MessageCircle, RefreshCw,
 } from "lucide-react";
 
 const CATEGORIES = [

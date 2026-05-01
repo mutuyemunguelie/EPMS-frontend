@@ -4,7 +4,7 @@ import { useAuth } from "../context/AuthContext";
 import { loginUser } from "../api/authAPI";
 import {
   Lock, User, Eye, EyeOff, AlertCircle, Info,
-  Shield, Users, Briefcase,
+  Shield, Briefcase,
 } from "lucide-react";
 
 const Login = () => {

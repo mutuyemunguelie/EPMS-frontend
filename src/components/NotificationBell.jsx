@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback } from "react";
 import {
-  Bell, X, Check, Reply, Send, ChevronDown, ChevronUp,
+  Bell, X, Check, Send, ChevronDown, ChevronUp,
   Trash2, Trash, ThumbsUp, Shield, Users, MessageCircle,
-  CheckCheck, AlertCircle,
+  CheckCheck,
 } from "lucide-react";
 import {
   getNotifications, markAllNotificationsRead, markNotificationRead,

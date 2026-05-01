@@ -35,7 +35,7 @@ import { useAuth } from "../context/AuthContext";
 import { useSocket } from "../context/SocketContext";
 
 /* Utils */
-import { format, formatDistanceToNow } from "date-fns";
+import { format } from "date-fns";
 
 /* Components */
 import Modal from "../components/Modal";
@@ -798,7 +798,7 @@ const fetchAll = useCallback(async () => {
         const roleOrder = { admin: 0, hr: 1, employee: 2 };
         return (roleOrder[a.role] || 2) - (roleOrder[b.role] || 2);
       });
-  }, [allUsers, partners, search, onlineUsers]);
+  }, [allUsers, partners, search, onlineUsers, isOnline]);
 
   const filteredGroups = groups.filter((g) =>
     g.name.toLowerCase().includes(search.toLowerCase()),
