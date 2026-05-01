@@ -480,7 +480,7 @@ const Messages = () => {
   const inputRef = useRef(null);
   const typingTimeout = useRef(null);
 
-  const isOnline = (u) => onlineUsers.includes(u?.toLowerCase());
+  const isOnline = useCallback((u) => onlineUsers.includes(u?.toLowerCase()), [onlineUsers]);
   const isBlocked = (u) => blocked.includes(u?.toLowerCase());
 
   const scrollBottom = useCallback(() => {
