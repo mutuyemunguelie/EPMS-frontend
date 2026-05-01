@@ -789,8 +789,7 @@ This project is licensed under the MIT License — see LICENSE file for details.
 ## 👨‍💻 Author
 
 **Developer:** [Your Name]  
-**Organization:** SmartPark - Rubavu District, Rwanda  
-**Created:** 2026
+**Organization:** SmartPark - Rubavu District, Rwanda
 
 ---
 
