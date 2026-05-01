@@ -1,0 +1,210 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-size: 16px;
+  }
+
+  body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background-color: #f5f5f5;
+    color: #171717;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+  }
+
+  #root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: #f5f5f5; }
+  ::-webkit-scrollbar-thumb { background: #d4d4d4; border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: #a3a3a3; }
+
+  select option { background-color: #ffffff; color: #171717; }
+
+  /* Modal animation classes */
+.modal-enter {
+  animation: modalIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.modal-exit {
+  animation: modalOut 0.15s ease-in forwards;
+}
+
+@keyframes modalIn {
+  0%   { opacity: 0; transform: scale(0.94) translateY(8px); }
+  100% { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+@keyframes modalOut {
+  0%   { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.96); }
+}
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2
+           font-medium rounded-lg text-sm px-4 py-2.5
+           transition-all duration-150 ease-in-out
+           focus:outline-none focus:ring-2 focus:ring-offset-1
+           disabled:opacity-50 disabled:cursor-not-allowed
+           cursor-pointer select-none active:scale-[0.98];
+  }
+
+  .btn-primary {
+    @apply btn bg-brand-600 hover:bg-brand-700 active:bg-brand-800
+           text-white focus:ring-brand-500 shadow-sm hover:shadow-md;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white hover:bg-panel-50 active:bg-panel-100
+           text-panel-700 border border-panel-200 focus:ring-panel-300
+           shadow-sm;
+  }
+
+  .btn-danger {
+    @apply btn bg-red-600 hover:bg-red-700 active:bg-red-800
+           text-white focus:ring-red-400 shadow-sm;
+  }
+
+  .btn-danger-outline {
+    @apply btn bg-white hover:bg-red-50 active:bg-red-100
+           text-red-600 border border-red-200 focus:ring-red-300;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent hover:bg-panel-100 active:bg-panel-200
+           text-panel-600 focus:ring-panel-300;
+  }
+
+  .btn-sm { @apply text-xs px-3 py-1.5 rounded-md; }
+
+  .btn-icon {
+    @apply p-2 rounded-lg text-panel-400 hover:text-panel-700
+           hover:bg-panel-100 transition-all duration-150 active:scale-95;
+  }
+
+  .input-field {
+    @apply w-full bg-white border border-panel-200
+           text-panel-800 placeholder-panel-400
+           rounded-lg px-3.5 py-2.5 text-sm
+           focus:outline-none focus:border-brand-500
+           focus:ring-2 focus:ring-brand-500/20
+           transition-all duration-150
+           hover:border-panel-300;
+  }
+
+  .label { @apply block text-sm font-medium text-panel-700 mb-1; }
+
+  .card {
+    @apply bg-white rounded-xl border border-panel-200
+           shadow-card transition-shadow duration-200;
+  }
+
+  .card-header {
+    @apply px-5 py-4 border-b border-panel-100
+           flex items-center justify-between;
+  }
+
+  .card-body { @apply p-5; }
+
+  .page-title {
+    @apply text-xl font-bold text-panel-900 flex items-center gap-2.5;
+  }
+
+  .page-subtitle { @apply text-sm text-panel-500 mt-0.5; }
+
+  .section-title {
+    @apply text-sm font-semibold text-panel-800 uppercase tracking-wide;
+  }
+
+  .table-wrapper { @apply overflow-x-auto; }
+
+  .table-head {
+    @apply bg-panel-50 text-panel-500 text-xs font-semibold uppercase tracking-wider;
+  }
+
+  .table-row {
+    @apply border-b border-panel-100 hover:bg-brand-50/30
+           transition-colors duration-100;
+  }
+
+  .table-cell { @apply px-4 py-3 text-sm text-panel-700 whitespace-nowrap; }
+
+  .badge {
+    @apply inline-flex items-center gap-1 px-2 py-0.5 rounded-md text-xs font-medium;
+  }
+
+  .badge-green { @apply badge bg-brand-50 text-brand-700 border border-brand-200; }
+  .badge-gray  { @apply badge bg-panel-100 text-panel-600 border border-panel-200; }
+  .badge-blue  { @apply badge bg-blue-50 text-blue-700 border border-blue-200; }
+  .badge-pink  { @apply badge bg-pink-50 text-pink-700 border border-pink-200; }
+  .badge-red   { @apply badge bg-red-50 text-red-700 border border-red-200; }
+  .badge-yellow { @apply badge bg-yellow-50 text-yellow-700 border border-yellow-200; }
+
+  .stat-card { @apply card p-5 flex items-start gap-4; }
+
+  .stat-icon {
+    @apply w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0;
+  }
+
+  .alert-error {
+    @apply px-4 py-3 rounded-lg bg-red-50 border border-red-200
+           text-red-700 text-sm flex items-center gap-2 animate-slide-down;
+  }
+
+  .alert-success {
+    @apply px-4 py-3 rounded-lg bg-brand-50 border border-brand-200
+           text-brand-700 text-sm flex items-center gap-2 animate-slide-down;
+  }
+
+  .alert-info {
+    @apply px-4 py-3 rounded-lg bg-blue-50 border border-blue-200
+           text-blue-700 text-sm flex items-center gap-2;
+  }
+
+  .modal-overlay {
+    @apply fixed inset-0 z-50 flex items-center justify-center
+           bg-black/30 backdrop-blur-sm px-4 animate-overlay-in;
+  }
+
+  .modal-card {
+    @apply bg-white rounded-xl shadow-card-lg border border-panel-200
+           w-full max-w-md p-6 animate-scale-in;
+  }
+
+  .empty-state { @apply py-12 text-center text-panel-400; }
+
+  .skeleton {
+    @apply bg-gradient-to-r from-panel-200 via-panel-100 to-panel-200
+           bg-[length:200%_100%] rounded animate-shimmer;
+  }
+
+  /* Stagger children */
+  .stagger > * {
+    @apply animate-slide-up;
+  }
+  .stagger > *:nth-child(1) { animation-delay: 0ms; }
+  .stagger > *:nth-child(2) { animation-delay: 40ms; }
+  .stagger > *:nth-child(3) { animation-delay: 80ms; }
+  .stagger > *:nth-child(4) { animation-delay: 120ms; }
+  .stagger > *:nth-child(5) { animation-delay: 160ms; }
+  .stagger > *:nth-child(6) { animation-delay: 200ms; }
+}
